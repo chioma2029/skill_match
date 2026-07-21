@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Skill Match — Getting employed just got easier</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Skill Match connects job seekers with real opportunities and uses an AI assistant to suggest roles and tailor your CV.">
+
+  <!-- Google Fonts used across the site -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Our own stylesheet (all the colours and layout live here) -->
+  <link rel="stylesheet" href="styling index.css">
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='6' fill='%232563EB'/%3E%3Ctext x='12' y='16' font-family='Arial' font-size='11' font-weight='700' fill='white' text-anchor='middle'%3ESM%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+
+  <!-- ============ HEADER / NAVIGATION ============
+       These links point to other pages of the site.
+       Only index.html (this page) and contact.html exist so far —
+       about.html, services.html and guidance.html are placeholders
+       for pages that can be built later. -->
+  <header>
+    <div class="header-inner">
+      <a class="logo" href="index.html">
+        <span class="logo-mark">SM</span>
+        Skill Match
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="siteNav" aria-label="Toggle menu">&#9776;</button>
+      
+    
+      <nav id="siteNav">
+        <a href="index.html" class="active">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="#assistant">AI Assistant</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="Impact">Impact</a>
+      </nav>
+<button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark mode">
+                    <span aria-hidden="true">&#9790;</span>
+                    <span class="theme-label">Dark mode</span>
+      </button>
+    </div>
+    
+  </header>
+
+  <main>
+
+    <!-- ============ HERO SECTION ============ -->
+    <section id="home">
+      <div class="wrap hero-grid">
+        <div>
+          <span class="eyebrow">Job matching &amp; career support</span>
+          <h1>Getting employed just got <span>easier</span>.</h1>
+          <p class="hero-sub">
+            Skill Match connects you with real openings and uses a built-in
+            AI assistant to suggest roles that fit your skills, then tailor
+            your CV to the one you choose.
+          </p>
+          <div class="hero-ctas">
+            <a class="btn btn-primary" href="#assistant">Get matched now</a>
+            <a class="btn btn-outline" href="about.html">How it works</a>
+          </div>
+          <div class="hero-stats">
+            <div><b>500+</b><span>Jobs posted</span></div>
+            <div><b>95%</b><span>Success rate</span></div>
+            <div><b>10K+</b><span>Community members</span></div>
+          </div>
+        </div>
+
+        <!-- A simple preview card, just to show what the assistant
+             produces before the visitor tries it themselves. -->
+        <div class="preview-card">
+          <div class="preview-card-head">
+            <span>Suggested for you</span>
+            <span class="preview-badge">AI Assistant</span>
+          </div>
+          <div class="preview-row">
+            <div class="preview-role">
+              <b>Software Developer</b>
+              <span>Nairobi &middot; Full-time</span>
+            </div>
+            <span class="preview-match">92%</span>
+          </div>
+          <div class="preview-row">
+            <div class="preview-role">
+              <b>Data Analyst</b>
+              <span>Kisumu &middot; Full-time</span>
+            </div>
+            <span class="preview-match">78%</span>
+          </div>
+          <div class="preview-row">
+            <div class="preview-role">
+              <b>Customer Support Lead</b>
+              <span>Remote &middot; Full-time</span>
+            </div>
+            <span class="preview-match">64%</span>
+          </div>
+          <p class="preview-foot">Match scores are based on your skills. <a href="#assistant">Try it yourself &rarr;</a></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ AI ASSISTANT SECTION ============
+         Step 1 lets a visitor type their skills and get 3 suggested
+         roles. Step 2 lets them paste their CV and see how well it
+         matches the role they picked, plus what to add.
+         All the logic for this lives in js/script.js -->
+    <section id="assistant">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="eyebrow">Skill Match Assistant</span>
+          <h2>Get matched, then tailor your CV</h2>
+          <p>Tell it what you do, get suggested roles from our current openings, then tailor your CV to the one you pick.</p>
+        </div>
+
+        <div class="kiosk">
+
+          <!-- Step 1: find matching roles -->
+          <div class="kiosk-panel" id="panelFind">
+            <span class="kiosk-step">1</span>
+            <h3>Find roles that fit you</h3>
+            <label for="skillsInput">Your skills or interests</label>
+            <textarea id="skillsInput" rows="3" placeholder="e.g. python, excel, customer service, social media"></textarea>
+            <button class="btn btn-primary btn-block" id="findBtn" type="button">Suggest roles</button>
+            <div id="suggestions" class="suggestions" aria-live="polite"></div>
+          </div>
+
+          <!-- Step 2: tailor CV to the chosen role -->
+          <div class="kiosk-panel" id="panelPrep">
+            <span class="kiosk-step">2</span>
+            <h3>Tailor your CV to the role</h3>
+            <p class="kiosk-hint" id="prepHint">Select a role on the left to get started.</p>
+            <div id="prepBody" hidden>
+              <p class="selected-role">Tailoring for: <strong id="selectedRoleName"></strong></p>
+              <label for="cvInput">Paste your CV, or list your skills</label>
+              <textarea id="cvInput" rows="5" placeholder="Paste your CV text, or list your skills separated by commas"></textarea>
+              <button class="btn btn-primary btn-block" id="tailorBtn" type="button">Tailor my CV</button>
+              <div id="tailorResult" class="tailor-result" aria-live="polite"></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+    <footer class="site-footer">
+        <div>
+            <h3>Skill Match</h3>
+            <p>Creating better futures.</p>
+        </div>
+
+        <div class="footer-links">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </div>
+
+        <p class="copyright">© 2026 My Website. All rights reserved.</p>
+    </footer>
+
+  <!-- Our own JavaScript (mobile menu + AI assistant behaviour) -->
+  <script src="index.js"></script>
+</body>
+</html>

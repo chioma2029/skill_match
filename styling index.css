@@ -1,0 +1,421 @@
+/* ============================================================
+   Skill Match — stylesheet
+   This file controls how every page looks (colours, spacing,
+   fonts, layout). It is shared by index.html and contact.html.
+   ============================================================ */
+
+/* ---- 1. Colour palette --------------------------------------
+   Every colour used on the site is defined once here as a
+   "CSS variable" (the --name: value; lines below). If you ever
+   want to change the blue used for buttons, you only need to
+   change it in ONE place: --blue below.
+   --------------------------------------------------------------*/
+:root {
+  --navy: #0B1E3F;        /* darkest blue, used for headings */
+  --blue-dark: #1E40AF;   /* dark blue, hover states */
+  --blue: #2563EB;        /* main brand blue, used for buttons/links */
+  --blue-mid: #3B82F6;    /* medium blue, used for accents */
+  --blue-light: #DBEAFE;  /* pale blue, used for soft backgrounds */
+  --blue-pale: #EFF6FF;   /* almost-white blue, page background */
+  --sky: #60A5FA;         /* light accent blue */
+
+  --white: #FFFFFF;
+  --border: #C7DBFC;      /* light blue border colour */
+  --text: #1E293B;        /* main body text colour (dark grey-blue) */
+  --text-muted: #5B6B85;  /* softer text colour for captions */
+
+  --font-head: "Sora", "Segoe UI", sans-serif;
+  --font-body: "Inter", "Segoe UI", sans-serif;
+
+  --max-width: 1160px;    /* the widest the page content will stretch */
+  --radius: 12px;         /* rounded corner size used everywhere */
+  --shadow: 0 4px 18px rgba(37, 99, 235, 0.10);
+}
+
+/* ---- 2. Reset & base styles -----------------------------------
+   These rules remove the browser's default spacing/quirks so the
+   site looks the same everywhere, then set the basic look of text.
+   --------------------------------------------------------------*/
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--blue-pale);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+img, svg { display: block; max-width: 100%; }
+a { color: inherit; }
+ul { margin: 0; padding: 0; list-style: none; }
+h1, h2, h3, h4 { font-family: var(--font-head); color: var(--navy); margin: 0; }
+
+/* A ".wrap" simply centres content and stops it from touching the
+   edges of the screen on wide monitors. Reused on every section. */
+.wrap {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 clamp(1.25rem, 4vw, 2.5rem);
+}
+
+.eyebrow {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin-bottom: 0.6rem;
+}
+
+/* ---- 3. Header / navigation ------------------------------------*/
+header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border);
+}
+
+.header-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 1rem clamp(1.25rem, 4vw, 2.5rem);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-head);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--navy);
+  text-decoration: none;
+}
+
+.logo-mark {
+  width: 30px; height: 30px;
+  border-radius: 8px;
+  background: var(--blue);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+nav { display: flex; align-items: center; gap: clamp(1rem, 2.2vw, 1.9rem); }
+
+nav a {
+  text-decoration: none;
+  color: var(--text);
+  font-size: 0.92rem;
+  font-weight: 600;
+  padding: 0.4rem 0.1rem;
+  border-bottom: 2px solid transparent;
+  transition: color 0.15s ease;
+}
+
+nav a:hover { color: var(--blue); }
+nav a.active { color: var(--blue); border-bottom-color: var(--blue); }
+nav a:focus-visible { outline: 2px solid var(--blue); outline-offset: 4px; border-radius: 2px; }
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  width: 40px; height: 38px;
+  color: var(--navy);
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+/* ---- 4. Buttons -------------------------------------------------*/
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.94rem;
+  text-decoration: none;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
+}
+.btn:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
+.btn-primary { background: var(--blue); color: var(--white); }
+.btn-primary:hover { background: var(--blue-dark); }
+.btn-outline { background: var(--white); border-color: var(--border); color: var(--navy); }
+.btn-outline:hover { border-color: var(--blue); color: var(--blue); }
+.btn-block { width: 100%; }
+
+/* ---- 5. Hero section ---------------------------------------------*/
+#home { padding: clamp(3rem, 7vw, 5.5rem) 0; }
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: center;
+}
+
+#home h1 {
+  font-size: clamp(2.2rem, 4.6vw, 3.4rem);
+  line-height: 1.14;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+#home h1 span { color: var(--blue); }
+
+.hero-sub {
+  font-size: 1.08rem;
+  color: var(--text-muted);
+  max-width: 48ch;
+  margin: 1.1rem 0 1.8rem;
+}
+
+.hero-ctas { display: flex; flex-wrap: wrap; gap: 0.9rem; }
+
+.hero-stats {
+  display: flex;
+  gap: clamp(1.5rem, 4vw, 2.5rem);
+  margin-top: 2.2rem;
+  padding-top: 1.8rem;
+  border-top: 1px solid var(--border);
+}
+.hero-stats div b { display: block; font-family: var(--font-head); font-size: 1.5rem; color: var(--navy); }
+.hero-stats div span { font-size: 0.85rem; color: var(--text-muted); }
+
+/* Little "preview card" that shows example job matches */
+.preview-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  padding: 1.6rem;
+}
+.preview-card-head {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 1.2rem;
+}
+.preview-card-head span {
+  font-size: 0.78rem; font-weight: 600; color: var(--text-muted);
+  text-transform: uppercase; letter-spacing: 0.05em;
+}
+.preview-badge {
+  background: var(--blue-light); color: var(--blue-dark);
+  font-size: 0.75rem; font-weight: 700; padding: 0.25rem 0.6rem; border-radius: 999px;
+}
+.preview-row {
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+  padding: 0.9rem 0; border-bottom: 1px solid var(--border);
+}
+.preview-row:last-of-type { border-bottom: none; }
+.preview-role b { display: block; font-size: 0.96rem; color: var(--navy); }
+.preview-role span { font-size: 0.82rem; color: var(--text-muted); }
+.preview-match { font-family: var(--font-head); font-weight: 700; font-size: 1rem; color: var(--blue); }
+.preview-foot {
+  margin-top: 1.2rem; padding-top: 1rem; border-top: 1px dashed var(--border);
+  font-size: 0.85rem; color: var(--text-muted);
+}
+.preview-foot a { color: var(--blue); font-weight: 600; text-decoration: none; }
+.preview-foot a:hover { text-decoration: underline; }
+
+/* ---- 6. Generic section rhythm ------------------------------------*/
+main section { padding: clamp(3.5rem, 7vw, 5.5rem) 0; }
+.section-head { max-width: 640px; margin-bottom: clamp(2rem, 5vw, 3rem); }
+.section-head h2 { font-size: clamp(1.8rem, 3.6vw, 2.4rem); font-weight: 700; margin-bottom: 0.6rem; }
+.section-head p { color: var(--text-muted); font-size: 1.02rem; margin: 0; }
+
+/* ---- 7. AI Assistant section ---------------------------------------*/
+#assistant { background: var(--white); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+
+.kiosk { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+
+.kiosk-panel {
+  background: var(--blue-pale);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.8rem 1.7rem;
+}
+.kiosk-step {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 24px; height: 24px; border-radius: 50%;
+  background: var(--blue); color: var(--white);
+  font-family: var(--font-head); font-size: 0.78rem; font-weight: 700;
+  margin-bottom: 0.9rem;
+}
+.kiosk-panel h3 { font-size: 1.25rem; font-weight: 700; margin-bottom: 1rem; }
+.kiosk-panel label { display: block; font-size: 0.85rem; font-weight: 600; color: var(--navy); margin-bottom: 0.4rem; }
+.kiosk-panel textarea {
+  width: 100%; background: var(--white); border: 1px solid var(--border);
+  border-radius: 8px; color: var(--text); font-family: var(--font-body);
+  font-size: 0.94rem; padding: 0.75rem; resize: vertical; margin-bottom: 1rem;
+}
+.kiosk-panel textarea:focus-visible, .kiosk-panel textarea:focus {
+  outline: 2px solid var(--blue); outline-offset: 1px; border-color: var(--blue);
+}
+.kiosk-hint { color: var(--text-muted); font-size: 0.9rem; margin: 0; }
+.selected-role { font-size: 0.9rem; color: var(--text-muted); margin: 0 0 1rem; }
+.selected-role strong { color: var(--navy); }
+
+.suggestions { margin-top: 1.4rem; display: grid; gap: 0.9rem; }
+.suggestion-card { background: var(--white); border: 1px solid var(--border); border-radius: 10px; padding: 1.1rem 1.2rem; }
+.suggestion-card .sc-head { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; margin-bottom: 0.6rem; }
+.suggestion-card h4 { font-size: 1.05rem; font-weight: 700; }
+.suggestion-card .sc-loc { font-size: 0.8rem; color: var(--text-muted); white-space: nowrap; }
+
+.chip-row { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 0.9rem; }
+.chip { font-size: 0.75rem; font-weight: 600; padding: 0.25rem 0.6rem; border-radius: 999px; }
+/* Skills the person already has = solid blue.
+   Skills worth adding = pale blue outline. Both stay in the blue family. */
+.chip-match { background: var(--blue); color: var(--white); }
+.chip-gap { background: var(--blue-light); color: var(--blue-dark); border: 1px solid var(--border); }
+
+.suggestion-card .btn { padding: 0.55rem 1.1rem; font-size: 0.85rem; }
+
+.tailor-result h5 {
+  font-size: 0.78rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.05em; color: var(--text-muted); margin: 1.1rem 0 0.5rem;
+}
+.tailor-result h5:first-child { margin-top: 0; }
+.tailor-summary {
+  background: var(--blue-light); border-left: 3px solid var(--blue);
+  padding: 0.9rem 1rem; font-size: 0.94rem; color: var(--navy);
+  border-radius: 0 8px 8px 0; margin: 0;
+}
+
+/* ---- 8. Contact page -----------------------------------------------*/
+#contact-hero { padding: clamp(2.5rem, 6vw, 4rem) 0 0; }
+#contact-hero h1 { font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 700; }
+#contact-hero p { color: var(--text-muted); max-width: 55ch; margin-top: 0.8rem; }
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2rem, 5vw, 3.5rem);
+  align-items: start;
+}
+
+.contact-info { display: grid; gap: 1rem; }
+.contact-card {
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 1.6rem 1.5rem;
+}
+.contact-card .eyebrow { margin-bottom: 0.5rem; }
+.contact-card p, .contact-card a { margin: 0; font-size: 1.02rem; text-decoration: none; color: var(--navy); font-weight: 600; }
+.contact-card a:hover { color: var(--blue); }
+
+.contact-form {
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 1.8rem;
+}
+.contact-form label { display: block; font-size: 0.85rem; font-weight: 600; color: var(--navy); margin-bottom: 0.4rem; }
+.contact-form input, .contact-form textarea {
+  width: 100%; background: var(--blue-pale); border: 1px solid var(--border);
+  border-radius: 8px; color: var(--text); font-family: var(--font-body);
+  font-size: 0.94rem; padding: 0.75rem; margin-bottom: 1.1rem;
+}
+.contact-form input:focus, .contact-form textarea:focus {
+  outline: 2px solid var(--blue); outline-offset: 1px; border-color: var(--blue);
+}
+.form-note { font-size: 0.85rem; color: var(--text-muted); margin-top: 0.9rem; }
+
+.site-footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 28px;
+  padding: 42px max(24px, calc((100% - 1152px) / 2));
+  color: #dbeafe;
+  background: #102d59;
+}
+
+.site-footer h3 {
+  margin: 0 0 10px;
+  color: white;
+}
+
+.site-footer div>p {
+  max-width: 320px;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.footer-links a {
+  color: #dbeafe;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+.copyright {
+  width: 100%;
+  margin: 0;
+  padding-top: 20px;
+  border-top: 1px solid rgba(219, 234, 254, .28);
+  font-size: 14px;
+  text-align: center;
+}
+/* ---- 10. Responsive layout --------------------------------------------*/
+@media (max-width: 900px) {
+  .hero-grid { grid-template-columns: 1fr; }
+  .kiosk { grid-template-columns: 1fr; }
+  .contact-layout { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 700px) {
+  .nav-toggle { display: block; }
+  nav {
+    position: absolute; top: 100%; left: 0; right: 0;
+    flex-direction: column; align-items: flex-start; gap: 0.2rem;
+    background: var(--white); padding: 0.5rem clamp(1.25rem, 4vw, 2.5rem) 1.2rem;
+    border-bottom: 1px solid var(--border); display: none;
+  }
+  nav.open { display: flex; }
+  nav a { padding: 0.7rem 0; width: 100%; }
+  .footer-inner { flex-direction: column; align-items: flex-start; }
+  .footer-inner a { margin-left: 0; margin-right: 1.2rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+body.dark-theme {
+  --ink: #e1efff;
+  --text: #c4d9ef;
+  --page: #0b1b31;
+  --surface: #112945;
+  --line: #285078;
+  --blue-pale: #16385f;
+  --shadow: 0 12px 28px rgba(0, 0, 0, .28);
+}
+.dark-theme header {
+  background: rgba(11, 27, 49, .94);
+}
