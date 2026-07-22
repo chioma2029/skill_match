@@ -6,13 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us | Skill Match</title>
 
-    <!-- Google Fonts used across the site -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&family=Inter:wght@400;500;600;700&display=swap"
-        rel="stylesheet">
-
     <!-- Base stylesheet with shared styles for all pages -->
     <link rel="stylesheet" href="base.css">
 
@@ -35,7 +28,6 @@
             <nav id="siteNav">
                 <a href="index.html">Home</a>
                 <a href="about.html" class="active">About Us</a>
-                <a href="#assistant">AI Assistant</a>
                 <a href="mission.html">Mission</a>
                 <a href="impact.html">Impact</a>
                 <a href="contact.html">Contact Us</a>
@@ -49,47 +41,59 @@
 
     <main>
         <section class="hero-section" id="home">
-            <p class="eyebrow">Skill-based matching platform</p>
-            <h1>Connecting talent with opportunity through smarter matching.</h1>
-            <p>
-                Skill Match helps employers find the right people faster and gives employees a clearer way to present
-                their strengths.
-            </p>
+            <div class="hero-background">
+                <img src="https://i.pinimg.com/736x/89/c7/88/89c7882bce001e6cbe04bec8d83aa341.jpg" alt="Hero background image">
+            </div>
+            <p class="eyebrow">Skill-based matching </p>
+            <h1>Connect with opportunities tailored to your unique talent.</h1>
+            <p>Traditional resumes do not tell the whole story. We match your specific technical and creative skills with companies looking for exactly what you bring to the table..</p>
             <a class="btn" href="#about">Learn more</a>
         </section>
 
         <section class="impact-section" id="about">
-            <h2>About Skill Match</h2>
-            <p>
-                Skill Match is a simple platform idea created to solve a real problem in the job market.
-                Many employers struggle to find candidates with the right abilities, while many skilled people are
-                overlooked because their strengths are not shown clearly enough.
-            </p>
-            <p>
-                Our goal is to make that connection easier by focusing on skills, potential, and practical ability
-                rather than only job titles or long resumes.
-            </p>
+            <div class="section-layout">
+                <div class="section-text">
+                    <h2>About Us</h2>
+                    <p>Our Core Belief: We solve a real problem: connecting skilled people with the right jobs. By shifting the focus from corporate pedigree to actual capabilities, we create a transparent hiring ecosystem where practical talent always meets real-world demand..</p>
+                </div>
+                <div class="section-image">
+                    <img src="https://i.pinimg.com/1200x/7b/3d/e9/7b3de915a0b63cf26b322064958d6c60.jpg" alt="Team collaborating">
+                </div>
+            </div>
         </section>
 
         <section class="impact-section alt-section" id="mission">
-            <h2>Our mission</h2>
-            <p>
-                We want to make hiring more fair, efficient, and meaningful for both sides.
-            </p>
-            <ul>
-                <li>Employees can show their skills clearly</li>
-                <li>Employers can discover better matches</li>
-                <li>Opportunities become easier to find</li>
-            </ul>
+            <div class="section-layout reverse">
+                <div class="section-text">
+                    <h2>Our Mission</h2>
+                    <p>Empower individuals: Showcase true technical capabilities beyond traditional degrees.</p>
+                    <p>Streamline hiring: Connect recruiters directly with verified hands-on expertise.</p>
+                    <p>Bridge equity gaps: Remove institutional bias by prioritizing practical merit.</p>
+                    <ul>
+                        <li>Show your skills</li>
+                        <li>Find great matches</li>
+                        <li>Grow your career</li>
+                    </ul>
+                </div>
+                <div class="section-image">
+                    <img src="https://i.pinimg.com/736x/ac/f3/cf/acf3cff612043c9bd17d385e347b3a6a.jpg" alt="Growth and opportunity">
+                </div>
+            </div>
         </section>
 
         <section class="impact-section" id="contact">
-            <h2>Why this project matters</h2>
-            <p>
-                This project matters because it helps solve a real challenge in the workplace: connecting capable people
-                with the right opportunities in a faster and more thoughtful way.
-            </p>
-            <a class="btn" href="mailto:contact@skillmatch.com">Contact us</a>
+            <div class="section-layout">
+                <div class="section-text">
+                    <h2>Why Choose Skill Match?</h2>
+                    <p> Precision AI alignment: Our assistant maps deep competencies to job requirements.</p>
+                    <p>Objective evaluation: Candidates prove expertise through real-world scenarios.</p>
+                    <p>Direct pipelines: Skip the application black hole with immediate matching.</p>
+                    <a class="btn" href="mailto:contact@skillmatch.com">Get in touch</a>
+                </div>
+                <div class="section-image">
+                    <img src="https://i.pinimg.com/736x/7e/96/b6/7e96b6038488b95e126c7727e4448759.jpg" alt="Success and impact">
+                </div>
+            </div>
         </section>
     </main>
 
@@ -109,6 +113,8 @@
 
         <p class="copyright">© 2026 Skill Match. All rights reserved.</p>
     </footer>
+
+    <script src="about.js"></script>
 </body>
 
 </html>
