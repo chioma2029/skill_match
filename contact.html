@@ -11,6 +11,7 @@
 
   <!-- Page-specific stylesheet for home and contact pages -->
   <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="theme.css">
 
   <link rel="icon"
     href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='6' fill='%232563EB'/%3E%3Ctext x='12' y='16' font-family='Arial' font-size='11' font-weight='700' fill='white' text-anchor='middle'%3ESM%3C/text%3E%3C/svg%3E">
@@ -36,6 +37,10 @@
         <a href="impact.html">Impact</a>
         <a href="contact.html" class="active">Contact Us</a>
       </nav>
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark mode">
+        <span aria-hidden="true">&#9790;</span>
+        <span class="theme-label">Dark mode</span>
+      </button>
     </div>
   </header>
 
@@ -115,6 +120,7 @@
   <!-- Same script file as the home page. It only sets up the mobile
        menu here, since this page has no AI assistant elements. -->
   <script src="index.js"></script>
+  <script src="theme.js"></script>
   <script>
     const contactForm = document.getElementById('contactForm');
     const formNote = document.getElementById('formNote');
