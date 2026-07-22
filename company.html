@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skill Match — Opportunities for Everyone</title>
+  <meta name="description" content="A welcoming space where employers and job seekers can connect, post opportunities, and share skills and qualifications.">
+  <link rel="stylesheet" href="base.css">
+  <link rel="stylesheet" href="company.css">
+</head>
+
+<body class="company-page">
+  <header>
+    <div class="header-inner">
+      <a class="logo" href="index.html">
+        <span class="logo-mark">SM</span>
+        Skill Match
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="siteNav" aria-label="Toggle menu">&#9776;</button>
+      <nav id="siteNav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="index.html#assistant">AI Assistant</a>
+        <a href="company.html" class="active">Employers</a>
+        <a href="contact.html">Contact Us</a>
+      </nav>
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark mode">
+        <span aria-hidden="true">&#9790;</span>
+        <span class="theme-label">Dark mode</span>
+      </button>
+    </div>
+  </header>
+
+  <main class="company-shell">
+    <section class="company-hero">
+      <div class="hero-copy">
+        <p class="eyebrow">A modern careers hub</p>
+        <h1>Hire faster. Get discovered faster.</h1>
+        <p>Skill Match brings employers and talented professionals together in one space where job postings, skill profiles, and real opportunities feel clear, welcoming, and easy to act on.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#employers">For employers</a>
+          <a class="btn btn-outline" href="#jobseekers">For job seekers</a>
+        </div>
+        <div class="hero-stats">
+          <div>
+            <strong>1.2k+</strong>
+            <span>active companies</span>
+          </div>
+          <div>
+            <strong>4.8k+</strong>
+            <span>ready candidates</span>
+          </div>
+          <div>
+            <strong>98%</strong>
+            <span>match quality</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <img src="images/image4.jpg" alt="Professionals connecting in a modern workplace">
+        <h2>What you can do here</h2>
+        <ul>
+          <li>Post exciting roles with salary, location, and must-have skills</li>
+          <li>Create a polished professional profile with your experience</li>
+          <li>Browse opportunities that fit your goals and strengths</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="portal-grid">
+      <article class="portal-card employers-card" id="employers" data-role="employer">
+        <div class="card-head">
+          <span class="pill">Employers</span>
+          <h2>Post jobs and find the right talent</h2>
+          <p>Create an account, share your hiring needs, and publish openings that attract the right candidates.</p>
+        </div>
+        <div class="card-visual">
+          <img src="images/employers.jpg" alt="A team discussing hiring needs">
+        </div>
+
+        <div class="auth-switch" role="tablist" aria-label="Employer access mode">
+          <button class="toggle-btn active" data-mode="login" type="button">Login</button>
+          <button class="toggle-btn" data-mode="signup" type="button">Sign up</button>
+        </div>
+
+        <h3 class="form-title">Welcome back, employer</h3>
+        <p class="form-hint">Log in to manage your roles and applications.</p>
+
+        <form class="portal-form">
+          <label for="companyName">Company name</label>
+          <input id="companyName" type="text" placeholder="BrightWave Ltd">
+
+          <label for="employerEmail">Work email</label>
+          <input id="employerEmail" type="email" placeholder="hr@brightwave.com">
+
+          <label for="employerPassword">Password</label>
+          <input id="employerPassword" type="password" placeholder="Create a secure password">
+
+          <label for="jobTitle">Role you want to post</label>
+          <input id="jobTitle" type="text" placeholder="Senior Product Designer">
+
+          <label for="jobNeeds">Requirements</label>
+          <textarea id="jobNeeds" rows="4" placeholder="List skills, experience level, tools, and location requirements"></textarea>
+
+          <button class="btn btn-primary btn-block submit-btn" type="button">Open employer dashboard</button>
+        </form>
+
+        <div class="dashboard-panel" data-dashboard="employer">
+          <div class="dashboard-head">
+            <h3>Employer dashboard</h3>
+            <p>Your hiring workspace is ready.</p>
+          </div>
+          <div class="dashboard-stats">
+            <div><strong>3</strong><span>Open roles</span></div>
+            <div><strong>18</strong><span>Applications</span></div>
+            <div><strong>4</strong><span>Shortlisted</span></div>
+          </div>
+          <div class="dashboard-list">
+            <div class="dashboard-item">
+              <h4>Senior Product Designer</h4>
+              <p>Posted 2 days ago • 7 new applicants</p>
+            </div>
+            <div class="dashboard-item">
+              <h4>Operations Analyst</h4>
+              <p>Posted 5 days ago • 5 new applicants</p>
+            </div>
+            <div class="dashboard-item">
+              <h4>Customer Success Lead</h4>
+              <p>Posted 1 week ago • 6 new applicants</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="sample-list">
+          <h3>Vacancies Listings</h3>
+          <div class="sample-item">
+            <div>
+              <h4>Frontend Developer</h4>
+              <p>React, TypeScript, 3+ years experience, remote-friendly</p>
+            </div>
+            <span class="sample-badge">Remote</span>
+          </div>
+          <div class="sample-item">
+            <div>
+              <h4>Customer Support Lead</h4>
+              <p>Leadership experience, CRM knowledge, Nairobi-based</p>
+            </div>
+            <span class="sample-badge">On-site</span>
+          </div>
+          <div class="sample-item">
+            <div>
+              <h4>Data Analyst</h4>
+              <p>Excel, SQL, dashboards, strong reporting skills</p>
+            </div>
+            <span class="sample-badge">Hybrid</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="portal-card seekers-card" id="jobseekers" data-role="candidate">
+        <div class="card-head">
+          <span class="pill accent">Job seekers</span>
+          <h2>Showcase your background and find your next fit</h2>
+          <p>Sign up, publish your profile, and share your skills, qualifications, and ideal roles with employers.</p>
+        </div>
+        <div class="card-visual">
+          <img src="images/job seeker.jpg" alt="A candidate preparing for a career opportunity">
+        </div>
+
+        <div class="auth-switch" role="tablist" aria-label="Candidate access mode">
+          <button class="toggle-btn active" data-mode="login" type="button">Login</button>
+          <button class="toggle-btn" data-mode="signup" type="button">Sign up</button>
+        </div>
+
+        <h3 class="form-title">Welcome back, candidate</h3>
+        <p class="form-hint">Access your profile and matching opportunities.</p>
+
+        <form class="portal-form">
+          <label for="personName">Full name</label>
+          <input id="personName" type="text" placeholder="Amina Otieno">
+
+          <label for="seekerEmail">Email</label>
+          <input id="seekerEmail" type="email" placeholder="amina@example.com">
+
+          <label for="seekerPassword">Password</label>
+          <input id="seekerPassword" type="password" placeholder="Choose a strong password">
+
+          <label for="specialty">Qualifications</label>
+          <input id="specialty" type="text" placeholder="BSc. Computer Science, Google UX Certificate">
+
+          <label for="skills">Skills</label>
+          <textarea id="skills" rows="4" placeholder="List your strongest skills, tools, and achievements"></textarea>
+
+          <label for="idealRole">Type of jobs you want</label>
+          <input id="idealRole" type="text" placeholder="Product design, data analysis, marketing roles">
+
+          <button class="btn btn-primary btn-block submit-btn" type="button">Open candidate dashboard</button>
+        </form>
+
+        <div class="dashboard-panel" data-dashboard="candidate">
+          <div class="dashboard-head">
+            <h3>Candidate dashboard</h3>
+            <p>Your career profile is ready for the next opportunity.</p>
+          </div>
+          <div class="dashboard-stats">
+            <div><strong>5</strong><span>Matches</span></div>
+            <div><strong>2</strong><span>Interviews</span></div>
+            <div><strong>1</strong><span>Shortlist</span></div>
+          </div>
+          <div class="dashboard-list">
+            <div class="dashboard-item">
+              <h4>Product Designer</h4>
+              <p>Remote • Strong fit based on your portfolio</p>
+            </div>
+            <div class="dashboard-item">
+              <h4>Marketing Analyst</h4>
+              <p>Hybrid • Matches your analytics experience</p>
+            </div>
+            <div class="dashboard-item">
+              <h4>Frontend Developer</h4>
+              <p>Remote • Good fit with your React portfolio</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="sample-list">
+          <h3>Candidate's profiles</h3>
+          <div class="sample-item">
+            <div>
+              <h4>Amina — UX Designer</h4>
+              <p>Figma, wireframing, accessibility, portfolio ready</p>
+            </div>
+            <span class="sample-badge">Design roles</span>
+          </div>
+          <div class="sample-item">
+            <div>
+              <h4>Daniel — Software Engineer</h4>
+              <p>JavaScript, React, Python, API integration</p>
+            </div>
+            <span class="sample-badge">Tech roles</span>
+          </div>
+          <div class="sample-item">
+            <div>
+              <h4>Mina — Marketing Specialist</h4>
+              <p>Content strategy, SEO, social campaigns, analytics</p>
+            </div>
+            <span class="sample-badge">Marketing</span>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section class="feature-strip">
+      <div class="feature-item">
+        <h3>Fast setup</h3>
+        <p>Get your account ready in minutes with guided forms and clear fields.</p>
+      </div>
+      <div class="feature-item">
+        <h3>Better matches</h3>
+        <p>Showcase the exact skills and requirements that matter for the role.</p>
+      </div>
+      <div class="feature-item">
+        <h3>Built for growth</h3>
+        <p>Support both hiring teams and professionals as opportunities evolve.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div>
+      <h3>Skill Match</h3>
+      <p>Connecting talent and opportunity with clarity.</p>
+    </div>
+
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="company.html">Employers</a>
+      <a href="contact.html">Contact Us</a>
+    </div>
+
+    <p class="copyright">© 2026 Skill Match. All rights reserved.</p>
+  </footer>
+
+  <script src="index.js"></script>
+  <script src="company.js"></script>
+</body>
+
+</html>
