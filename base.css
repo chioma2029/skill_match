@@ -9,37 +9,29 @@
    All pages inherit these variables.
    --------------------------------------------------------------*/
 :root {
-    --navy: #0B1E3F;
-    /* darkest blue, used for headings */
-    --blue-dark: #1E40AF;
-    /* dark blue, hover states */
-    --blue: #2563EB;
-    /* main brand blue, used for buttons/links */
-    --blue-mid: #3B82F6;
-    /* medium blue, used for accents */
-    --blue-light: #DBEAFE;
-    /* pale blue, used for soft backgrounds */
-    --blue-pale: #EFF6FF;
-    /* almost-white blue, page background */
-    --sky: #60A5FA;
-    /* light accent blue */
+    --navy: #0A0A0A;
+    --blue-dark: #B08A1A;
+    --blue: #D4AF37;
+    --blue-mid: #E2C05A;
+    --blue-light: #FFF2BF;
+    --blue-pale: #F8F2DB;
+    --sky: #F0D46D;
 
     --white: #FFFFFF;
-    --border: #C7DBFC;
-    /* light blue border colour */
-    --text: #1E293B;
-    /* main body text colour (dark grey-blue) */
-    --text-muted: #5B6B85;
-    /* softer text colour for captions */
+    --border: #C5A84C;
+    --text: #F7F7F7;
+    --text-muted: #D1C8A8;
+    --surface: #121212;
+    --line: #7A6320;
+    --ink: #F8F8F8;
+    --muted: #B7AF95;
 
     --font-head: "Sora", "Segoe UI", sans-serif;
     --font-body: "Inter", "Segoe UI", sans-serif;
 
     --max-width: 1160px;
-    /* the widest the page content will stretch */
     --radius: 12px;
-    /* rounded corner size used everywhere */
-    --shadow: 0 4px 18px rgba(37, 99, 235, 0.10);
+    --shadow: 0 8px 24px rgba(212, 175, 55, 0.16);
 }
 
 /* ---- 2. Reset & base styles -----------------------------------
@@ -55,8 +47,8 @@ html {
 
 body {
     margin: 0;
-    background: var(--blue-pale);
-    color: var(--text);
+    background: linear-gradient(135deg, #060606 0%, #1A1408 100%);
+    color: var(--white);
     font-family: var(--font-body);
     font-size: 16px;
     line-height: 1.65;
@@ -83,7 +75,7 @@ h2,
 h3,
 h4 {
     font-family: var(--font-head);
-    color: var(--navy);
+    color: var(--blue);
     margin: 0;
 }
 
@@ -108,7 +100,7 @@ header {
     position: sticky;
     top: 0;
     z-index: 50;
-    background: rgba(255, 255, 255, 0.94);
+    background: rgba(10, 10, 10, 0.95);
     backdrop-filter: blur(8px);
     border-bottom: 1px solid var(--border);
 }
@@ -130,7 +122,7 @@ header {
     font-family: var(--font-head);
     font-size: 1.3rem;
     font-weight: 700;
-    color: var(--navy);
+    color: var(--white);
     text-decoration: none;
 }
 
@@ -139,7 +131,7 @@ header {
     height: 30px;
     border-radius: 8px;
     background: var(--blue);
-    color: var(--white);
+    color: var(--surface);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -156,7 +148,7 @@ nav {
 
 nav a {
     text-decoration: none;
-    color: var(--text);
+    color: var(--white);
     font-size: 0.92rem;
     font-weight: 600;
     padding: 0.4rem 0.1rem;
@@ -186,7 +178,7 @@ nav a:focus-visible {
     border-radius: 8px;
     width: 40px;
     height: 38px;
-    color: var(--navy);
+    color: var(--white);
     font-size: 1.1rem;
     cursor: pointer;
 }
@@ -255,7 +247,7 @@ nav a:focus-visible {
 
 .btn-primary {
     background: var(--blue);
-    color: var(--white);
+    color: var(--surface);
 }
 
 .btn-primary:hover {
@@ -263,14 +255,15 @@ nav a:focus-visible {
 }
 
 .btn-outline {
-    background: var(--white);
+    background: transparent;
     border-color: var(--border);
-    color: var(--navy);
+    color: var(--white);
 }
 
 .btn-outline:hover {
     border-color: var(--blue);
-    color: var(--blue);
+    background: var(--blue);
+    color: var(--surface);
 }
 
 .btn-block {
@@ -280,10 +273,10 @@ nav a:focus-visible {
 .hero-button {
     display: inline-block;
     padding: 10px 16px;
-    color: white;
+    color: var(--surface);
     background: var(--blue);
     border-radius: 8px;
-    box-shadow: 0 5px 12px rgba(37, 99, 235, .2);
+    box-shadow: 0 5px 12px rgba(212, 175, 55, .24);
     font-weight: 700;
     text-decoration: none;
     transition: transform .2s ease, background .2s ease;
@@ -317,13 +310,14 @@ nav a:focus-visible {
     justify-content: space-between;
     gap: 28px;
     padding: 42px max(24px, calc((100% - 1152px) / 2));
-    color: #dbeafe;
-    background: #102d59;
+    color: var(--white);
+    background: #050505;
+    border-top: 1px solid var(--border);
 }
 
 .site-footer h3 {
     margin: 0 0 10px;
-    color: white;
+    color: var(--blue);
 }
 
 .site-footer div>p {
@@ -340,12 +334,12 @@ nav a:focus-visible {
 }
 
 .footer-links a {
-    color: #dbeafe;
+    color: var(--blue-light);
     text-decoration: none;
 }
 
 .footer-links a:hover {
-    color: white;
+    color: var(--blue);
     text-decoration: underline;
 }
 
@@ -353,7 +347,7 @@ nav a:focus-visible {
     width: 100%;
     margin: 0;
     padding-top: 20px;
-    border-top: 1px solid rgba(219, 234, 254, .28);
+    border-top: 1px solid rgba(212, 175, 55, .25);
     font-size: 14px;
     text-align: center;
 }

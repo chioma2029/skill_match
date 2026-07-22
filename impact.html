@@ -60,101 +60,119 @@
     </div>
 
     <div class="container">
-        <div class="hero">
-            <h1>Our Impact</h1>
-            <p>Since launching, we have registered 1000 job seekers, partnered with 300 employers, listed 400
-                opportunities, and successfully matched 600 candidates with employment opportunities. These early
-                results demonstrate demand for our solution and validate our model. By reducing the gap between
-                available talent and employment opportunities, we are not only helping people find work—we are enabling
-                individuals to earn income, support their families, and contribute to economic growth. With investment,
-                we aim to scale our reach, improve our matching technology, and connect thousands more people to
-                meaningful employment.
-            </p>
-            <p>So far, we have helped match over <strong>70%</strong> of graduates with suitable employers within
-                <strong>3 months</strong> after graduation.
-            </p>
-            <a class="hero-button" href="contact.html">Find your opportunity</a>
-        </div>
-
-
-        <div class="stats">
-            <div class="card">
-                <h3>70%+ Matches</h3>
-                <p>More than 70% of graduates are successfully matched with employers.</p>
+        <section class="hero hero-showcase">
+            <div class="hero-copy">
+                <p class="eyebrow">Visible progress</p>
+                <h1>Impact that feels real.</h1>
+                <p>We are helping people move from uncertainty to opportunity with faster matches, stronger support, and clearer next steps.</p>
+                <div class="hero-actions">
+                    <a class="hero-button" href="contact.html">Explore opportunities</a>
+                    <a class="hero-button secondary" href="#stories">See stories</a>
+                </div>
             </div>
-            <div class="card">
-                <h3>3 Months</h3>
-                <p>Most graduates are placed within three months of finishing school.</p>
-            </div>
-            <div class="card">
-                <h3>500+ Employers</h3>
-                <p>We continue to grow our employer network across different industries.</p>
-            </div>
-        </div>
 
-        <div class="section">
-            <h2>What we have achieved</h2>
-            <ul>
-                <li>Connected thousands of job seekers with employers</li>
-                <li>Created a simple and trusted job matching experience</li>
-                <li>Supported graduates with career opportunities faster</li>
-                <li>Built strong partnerships with companies and hiring teams</li>
-            </ul>
-        </div>
+            <div class="hero-visual" aria-label="Impact highlights gallery">
+                <div class="visual-card large">
+                    <img src="images/image1.jpg" alt="A student engaging with career opportunities">
+                </div>
+                <div class="visual-card small">
+                    <img src="images/image2.jpg" alt="A hiring conversation in progress">
+                </div>
+                <div class="visual-card small alt">
+                    <img src="images/image3.jpg" alt="A graduate celebrating a new role">
+                </div>
+            </div>
+        </section>
 
-        <div class="story-section">
-            <h2>Success Stories</h2>
+        <section class="stats">
+            <article class="card">
+                <span class="card-icon">↗</span>
+                <h3>70% matched</h3>
+                <p>Graduates placed in strong roles within three months.</p>
+            </article>
+            <article class="card">
+                <span class="card-icon">◎</span>
+                <h3>500+ employers</h3>
+                <p>Our network continues to grow across industries.</p>
+            </article>
+            <article class="card">
+                <span class="card-icon">★</span>
+                <h3>Trusted flow</h3>
+                <p>Simple pathways from profile to opportunity.</p>
+            </article>
+        </section>
+
+        <section class="gallery-grid">
+            <article class="gallery-panel feature-image">
+                <img src="images/mish.jpeg" alt="A workshop creating career-ready confidence">
+            </article>
+            <article class="gallery-panel">
+                <p class="eyebrow">What changed</p>
+                <h2>Every connection creates momentum.</h2>
+                <p>We turn applications into opportunities and opportunities into careers.</p>
+                <ul class="mini-list">
+                    <li>Faster introductions between talent and employers</li>
+                    <li>Clearer matching with less friction</li>
+                    <li>More confidence for job seekers and hiring teams</li>
+                </ul>
+            </article>
+        </section>
+
+        <section class="story-section" id="stories">
+            <div class="section-title-row">
+                <div>
+                    <p class="eyebrow">Stories</p>
+                    <h2>Recent wins</h2>
+                </div>
+                <div class="story-filters" role="tablist" aria-label="Story filters">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="graduate">Graduates</button>
+                    <button class="filter-btn" data-filter="employer">Employers</button>
+                </div>
+            </div>
+
             <div class="story-track">
-                <div class="story-card"
-                    onclick="openPopup('Alice', 'I found a marketing role within weeks thanks to this platform.', 'Marketing, Communication, Content Strategy', 'Marketing Coordinator', 'BrightWave Ltd')">
-                    <img src="images/image3.jpg" alt="Graduate story">
-                    <div>
-                        <strong>Alice, Graduate</strong>
-                        <p>“I found a marketing role within weeks thanks to this platform.”</p>
+                <article class="story-card" data-category="graduate"
+                    data-name="Alice" data-story="I found a marketing role within weeks thanks to this platform." data-skills="Marketing, Communication, Content Strategy" data-job="Marketing Coordinator" data-company="BrightWave Ltd">
+                    <img src="images/image3.jpg" alt="Alice's success story">
+                    <div class="story-card-body">
+                        <span class="story-pill">Graduate</span>
+                        <h3>Alice</h3>
+                        <p>“A calm, clear path to my first role.”</p>
                     </div>
-                </div>
-                <div class="story-card"
-                    onclick="openPopup('Daniel', 'The matching system helped me connect with the right employer quickly.', 'JavaScript, React, Problem Solving', 'Software Engineer', 'CodeHub Technologies')">
-                    <img src="images/image1.jpg" alt="Graduate story">
-                    <div>
-                        <strong>Daniel, Software Engineer</strong>
-                        <p>“The matching system helped me connect with the right employer quickly.”</p>
+                </article>
+
+                <article class="story-card" data-category="employer"
+                    data-name="Daniel" data-story="The matching system helped us connect with the right person quickly." data-skills="JavaScript, React, Problem Solving" data-job="Software Engineer" data-company="CodeHub Technologies">
+                    <img src="images/image1.jpg" alt="Daniel's hiring story">
+                    <div class="story-card-body">
+                        <span class="story-pill">Employer</span>
+                        <h3>Daniel</h3>
+                        <p>“The fit was immediate and surprisingly smooth.”</p>
                     </div>
-                </div>
-                <div class="story-card"
-                    onclick="openPopup('Mina', 'I got matched with a great company just three months after graduation.', 'Data Analysis, Excel, Reporting', 'Business Analyst', 'Northstar Consulting')">
-                    <img src="images/image2.jpg" alt="Graduate story">
-                    <div>
-                        <strong>Mina, Business Analyst</strong>
-                        <p>“I got matched with a great company just three months after graduation.”</p>
+                </article>
+
+                <article class="story-card" data-category="graduate"
+                    data-name="Mina" data-story="I got matched with a great company just three months after graduation." data-skills="Data Analysis, Excel, Reporting" data-job="Business Analyst" data-company="Northstar Consulting">
+                    <img src="images/image2.jpg" alt="Mina's success story">
+                    <div class="story-card-body">
+                        <span class="story-pill">Graduate</span>
+                        <h3>Mina</h3>
+                        <p>“The process felt simple and encouraging.”</p>
                     </div>
-                </div>
-                <div class="story-card"
-                    onclick="openPopup('Chris', 'The platform made my job search feel simple and confident.', 'UI Design, Figma, Branding', 'Product Designer', 'Pixel Studio')">
-                    <img src="images/image3.jpg" alt="Graduate story">
-                    <div>
-                        <strong>Chris, Designer</strong>
-                        <p>“The platform made my job search feel simple and confident.”</p>
+                </article>
+
+                <article class="story-card" data-category="employer"
+                    data-name="Chris" data-story="The platform made job discovery feel focused and confident for our team." data-skills="UI Design, Figma, Branding" data-job="Product Designer" data-company="Pixel Studio">
+                    <img src="images/image3.jpg" alt="Chris's hiring story">
+                    <div class="story-card-body">
+                        <span class="story-pill">Employer</span>
+                        <h3>Chris</h3>
+                        <p>“We found strong candidates without the usual noise.”</p>
                     </div>
-                </div>
-                <div class="story-card"
-                    onclick="openPopup('Sarah', 'I was connected with employers that truly matched my skills.', 'Leadership, Planning, Coordination', 'Project Manager', 'GreenBridge Group')">
-                    <img src="images/image1.jpg" alt="Graduate story">
-                    <div>
-                        <strong>Sarah, Project Manager</strong>
-                        <p>“I was connected with employers that truly matched my skills.”</p>
-                    </div>
-                </div>
-                <div class="story-card"
-                    onclick="openPopup('James', 'The experience was smooth, fast, and very encouraging.', 'Python, SQL, Data Insights', 'Data Analyst', 'Insight Labs')">
-                    <img src="images/mish.jpeg" alt="Graduate story">
-                    <div>
-                        <strong>James, Data Analyst</strong>
-                        <p>“The experience was smooth, fast, and very encouraging.”</p>
-                    </div>
-                </div>
+                </article>
             </div>
-        </div>
+        </section>
     </div>
 
 

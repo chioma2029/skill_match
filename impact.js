@@ -17,6 +17,36 @@ document.getElementById('popupOverlay').addEventListener('click', function (even
     }
 });
 
+const storyCards = document.querySelectorAll('.story-card');
+const filterButtons = document.querySelectorAll('.filter-btn');
+
+filterButtons.forEach(function (button) {
+    button.addEventListener('click', function () {
+        filterButtons.forEach(function (btn) {
+            btn.classList.remove('active');
+        });
+        button.classList.add('active');
+
+        const filter = button.getAttribute('data-filter');
+        storyCards.forEach(function (card) {
+            const matches = filter === 'all' || card.getAttribute('data-category') === filter;
+            card.classList.toggle('is-hidden', !matches);
+        });
+    });
+});
+
+storyCards.forEach(function (card) {
+    card.addEventListener('click', function () {
+        openPopup(
+            card.getAttribute('data-name'),
+            card.getAttribute('data-story'),
+            card.getAttribute('data-skills'),
+            card.getAttribute('data-job'),
+            card.getAttribute('data-company')
+        );
+    });
+});
+
 const themeToggle = document.getElementById('themeToggle');
 const themeLabel = themeToggle.querySelector('.theme-label');
 
