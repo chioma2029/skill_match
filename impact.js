@@ -47,18 +47,3 @@ storyCards.forEach(function (card) {
     });
 });
 
-const themeToggle = document.getElementById('themeToggle');
-const themeLabel = themeToggle.querySelector('.theme-label');
-
-function setTheme(theme) {
-    document.body.classList.toggle('dark-theme', theme === 'dark');
-    const isDark = theme === 'dark';
-    themeLabel.textContent = isDark ? 'Light mode' : 'Dark mode';
-    themeToggle.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
-    localStorage.setItem('skillMatchTheme', theme);
-}
-
-setTheme(localStorage.getItem('skillMatchTheme') || 'light');
-themeToggle.addEventListener('click', function () {
-    setTheme(document.body.classList.contains('dark-theme') ? 'light' : 'dark');
-});

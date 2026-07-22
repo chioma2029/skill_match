@@ -12,9 +12,10 @@
 
     <!-- Page-specific stylesheet for mission page -->
     <link rel="stylesheet" href="mission.css">
+    <link rel="stylesheet" href="theme.css">
 </head>
 
-<body>
+<body class="mission-page">
     <header>
         <div class="header-inner">
             <a class="logo" href="index.html">
@@ -31,6 +32,10 @@
                 <a href="impact.html">Impact</a>
                 <a href="contact.html">Contact Us</a>
             </nav>
+            <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark mode">
+                <span aria-hidden="true">&#9790;</span>
+                <span class="theme-label">Dark mode</span>
+            </button>
         </div>
     </header>
 
@@ -131,6 +136,7 @@
         <p class="copyright">© 2026 Skill Match. All rights reserved.</p>
     </footer>
  <script src="mission.js"></script>
+ <script src="theme.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,120 @@
+/* Shared theme overrides loaded after each page stylesheet. */
+body.light-theme {
+  --page-bg: #f7fbff;
+  --page-text: #17324d;
+  --text: #17324d;
+  --text-muted: #5b7186;
+  --white: #ffffff;
+  --surface: #ffffff;
+  --blue-pale: #eaf3ff;
+  --blue-light: #dbeafe;
+  --line: #b9cde5;
+  --border: #c8d9eb;
+  background: #f7fbff;
+  color: var(--text);
+}
+
+body.light-theme header {
+  background: rgba(255, 255, 255, 0.95);
+}
+
+body.light-theme nav a,
+body.light-theme .logo,
+body.light-theme .nav-toggle,
+body.light-theme .theme-toggle {
+  color: var(--text);
+}
+
+body.light-theme .site-footer {
+  color: #dbeafe;
+  background: #102d59;
+}
+
+body.light-theme .site-footer h3 {
+  color: #ffffff;
+}
+
+body.light-theme .footer-links a {
+  color: #dbeafe;
+}
+
+body.light-theme.company-page {
+  background: linear-gradient(135deg, #f7fbff 0%, #eaf3ff 100%);
+}
+
+body.light-theme.company-page .hero-card,
+body.light-theme.company-page .portal-card {
+  background: #ffffff;
+  border-color: var(--border);
+}
+
+body.light-theme.company-page .hero-stats div,
+body.light-theme.company-page .portal-card,
+body.light-theme.company-page .toggle-btn,
+body.light-theme.company-page .sample-item,
+body.light-theme.company-page .dashboard-stats div,
+body.light-theme.company-page .dashboard-item {
+  background: #ffffff;
+}
+
+body.light-theme.company-page .portal-form input,
+body.light-theme.company-page .portal-form textarea {
+  background: #f8fbff;
+  color: var(--text);
+}
+
+body.light-theme.company-page .toggle-btn {
+  color: var(--text);
+}
+
+body.light-theme.impact-page {
+  background: radial-gradient(circle at top, #eaf3ff 0%, #f7fbff 60%);
+  color: var(--text);
+}
+
+body.light-theme.impact-page .hero-showcase {
+  background: linear-gradient(125deg, #dbeafe 0%, #93c5fd 100%);
+}
+
+body.light-theme.impact-page .card,
+body.light-theme.impact-page .gallery-panel,
+body.light-theme.impact-page .story-section {
+  background: #ffffff;
+}
+
+body.light-theme.impact-page .story-card,
+body.light-theme.impact-page .popup-box {
+  background: #f8fbff;
+}
+
+body.light-theme.impact-page .card p,
+body.light-theme.impact-page .gallery-panel p,
+body.light-theme.impact-page .mini-list,
+body.light-theme.impact-page .story-card p,
+body.light-theme.impact-page .filter-btn,
+body.light-theme.impact-page .popup-box p {
+  color: #42627e;
+}
+
+body.light-theme:not(.about-page) .hero-text .hero-description,
+body.light-theme:not(.about-page) .card-text p {
+  color: #42627e;
+}
+
+body.light-theme:not(.about-page) main {
+  background: #f7fbff;
+}
+
+body.light-theme:not(.about-page) .content-card,
+body.light-theme:not(.about-page) .value-card {
+  background: #ffffff;
+}
+
+body.light-theme.mission-page .hero-section {
+  background: linear-gradient(135deg, #dbeafe 0%, #93c5fd 100%);
+  color: #17324d;
+}
+
+body.light-theme.mission-page footer {
+  background: #102d59;
+}
